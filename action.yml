@@ -1,6 +1,6 @@
 name: 'Parse Image Registry'
 description: 'Parses a Docker image URL to extract cloud provider and registry information'
-author: 'KoalaOps'
+author: 'Skyhook'
 
 branding:
   icon: 'package'

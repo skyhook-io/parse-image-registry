@@ -35,7 +35,7 @@ For most use cases, you can pass the image directly to `cloud-login` which will 
 
 ```yaml
 - name: Authenticate and login to registry
-  uses: KoalaOps/cloud-login@v1
+  uses: skyhook-io/cloud-login@v1
   with:
     image: 123456789.dkr.ecr.us-east-1.amazonaws.com/my-service:v1.0.0  # Tags are automatically stripped
     login_to_container_registry: true
@@ -49,7 +49,7 @@ For complex workflows where you need the parsed information for multiple steps:
 ```yaml
 - name: Parse image registry
   id: parse_registry
-  uses: KoalaOps/parse-image-registry@v1
+  uses: skyhook-io/parse-image-registry@v1
   with:
     image: '123456789.dkr.ecr.us-east-1.amazonaws.com/my-service'
 
@@ -61,7 +61,7 @@ For complex workflows where you need the parsed information for multiple steps:
     echo "Registry: ${{ steps.parse_registry.outputs.registry }}"
 
 - name: Authenticate to cloud
-  uses: KoalaOps/cloud-login@v1
+  uses: skyhook-io/cloud-login@v1
   with:
     provider: ${{ steps.parse_registry.outputs.provider }}
     account: ${{ steps.parse_registry.outputs.account }}
@@ -89,7 +89,7 @@ jobs:
       
       # Single-step authentication using image auto-detection
       - name: Login to registry
-        uses: KoalaOps/cloud-login@v1
+        uses: skyhook-io/cloud-login@v1
         with:
           image: ${{ inputs.image }}  # Auto-detects provider, account, region
           login_to_container_registry: true
@@ -307,7 +307,7 @@ strategy:
 steps:
   - name: Parse registry for ${{ matrix.service.name }}
     id: parse_registry
-    uses: KoalaOps/parse-image-registry@v1
+    uses: skyhook-io/parse-image-registry@v1
     with:
       image: ${{ matrix.service.image }}
   
@@ -328,7 +328,7 @@ steps:
 
 - name: Parse registry
   id: parse_registry
-  uses: KoalaOps/parse-image-registry@v1
+  uses: skyhook-io/parse-image-registry@v1
   with:
     image: ${{ steps.get_image.outputs.image }}
 ```
@@ -347,7 +347,7 @@ The action exports the following environment variables for use in subsequent ste
 Example usage:
 ```yaml
 - name: Parse image registry
-  uses: KoalaOps/parse-image-registry@v1
+  uses: skyhook-io/parse-image-registry@v1
   with:
     image: '123456789.dkr.ecr.us-east-1.amazonaws.com/my-app'
 
@@ -382,7 +382,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Support
 
-For issues, questions, or suggestions, please open an issue in the [GitHub repository](https://github.com/KoalaOps/parse-image-registry).
+For issues, questions, or suggestions, please open an issue in the [GitHub repository](https://github.com/skyhook-io/parse-image-registry).
 
 ## License
 
