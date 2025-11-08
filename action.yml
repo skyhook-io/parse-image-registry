@@ -1,4 +1,4 @@
-name: 'Parse Image Registry'
+name: 'Skyhook Parse Image Registry'
 description: 'Parses a Docker image URL to extract cloud provider and registry information'
 author: 'Skyhook'
 
