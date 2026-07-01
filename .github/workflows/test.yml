@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test AWS ECR Parsing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test AWS ECR standard format
         uses: ./
@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test AWS ECR Public Parsing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test AWS ECR Public format
         uses: ./
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test GCP Artifact Registry Parsing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test GCP Artifact Registry format
         uses: ./
@@ -115,7 +115,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test GCP Container Registry (Legacy) Parsing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test gcr.io format
         uses: ./
@@ -151,7 +151,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Azure Container Registry Parsing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test Azure ACR format
         uses: ./
@@ -185,7 +185,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test GitHub Container Registry Parsing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test ghcr.io format
         uses: ./
@@ -220,7 +220,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Docker Hub Parsing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test Docker Hub short format
         uses: ./
@@ -270,7 +270,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Generic Registry Parsing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test generic registry format
         uses: ./
@@ -305,7 +305,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Environment Variables Export
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test environment variable exports
         uses: ./
@@ -331,7 +331,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Edge Cases
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test URL with https protocol
         uses: ./
@@ -361,7 +361,7 @@ jobs:
     name: Test Error Cases
     continue-on-error: true  # Allow this job to complete even if individual steps fail
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Test invalid image format
         id: test-invalid
